@@ -1,0 +1,17 @@
+apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfig
+metadata:
+  labels:
+    machineconfiguration.openshift.io/role: master
+  name: 71-masters-sshd-motd
+spec:
+  config:
+    ignition:
+      version: 3.4.0
+    storage:
+      files:
+      - contents:
+          source: data:text/plain;charset=utf-8;base64,IF9fICBfXyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBfICAgICAgIAp8ICBcLyAgfCBfXyBfIF8gX18gIF8gX18gICBfXyBfICBfXyBfICBfXyBfKF8pIF9fIF8gCnwgfFwvfCB8LyBfYCB8ICdfIFx8ICdfIFwgLyBfYCB8LyBfYCB8LyBfYCB8IHwvIF9gIHwKfCB8ICB8IHwgKF98IHwgfCB8IHwgfCB8IHwgKF98IHwgKF98IHwgKF98IHwgfCAoX3wgfAp8X3wgIHxffFxfXyxffF98IHxffF98IHxffFxfXyxffFxfXywgfFxfXywgfF98XF9fLF98CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfF9fXy8gfF9fXy8gICAgICAgICAKICBfX19fICAgICAgICAgICAgICAgICBfICAgIF9fX18gICAgICBfICAgICBfICAgICAgICAKIC8gX19ffCBfX18gIF9fXyBfICAgXyggKSAgLyBfX198XyBfXyhfKV9fX3wgfF8gX19fICAKfCB8ICBfIC8gXyBcLyBfX3wgfCB8IHwvICB8IHwgICB8ICdfX3wgLyBfX3wgX18vIF8gXCAKfCB8X3wgfCAgX18vXF9fIFwgfF98IHwgICB8IHxfX198IHwgIHwgXF9fIFwgfHwgKF8pIHwKIFxfX19ffFxfX198fF9fXy9cX18sX3wgICAgXF9fX198X3wgIHxffF9fXy9cX19cX19fLyAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAK
+        mode: 0444
+        overwrite: true
+        path: /etc/motd
