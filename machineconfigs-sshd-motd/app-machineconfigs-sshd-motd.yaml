@@ -1,1 +1,13 @@
- 
+ apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: machineconfigs-sshd-motd
+  namespace: openshift-gitops
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: .
+    repoURL: https://github.com/demon86rm/ocp-gitops.git
+    targetRevision: HEAD
